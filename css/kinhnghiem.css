@@ -26,7 +26,7 @@ body {
 }
 
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/image/Coder.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/ThaiDinh/image/Coder.jpg') no-repeat center center;
     background-size: cover;
     height: 50vh;
     color: #fff;
