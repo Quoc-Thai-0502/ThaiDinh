@@ -1,0 +1,176 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 56px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #3498db !important;
+}
+
+.nav-link {
+    color: #333 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3498db !important;
+}
+
+.skills-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.soft-skills {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.section-title {
+    font-size: 2.1rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 20px auto 0;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.skill-item {
+    text-align: center;
+    width: 200px;
+}
+
+.skill-chart {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    animation: loadChart 0.5s ease-out forwards;
+}
+.skill-name{
+    text-align: center;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+.skill-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.skills-section:not(.soft-skills) .skill-item:nth-child(1) .circle { stroke: #3498db; }
+.skills-section:not(.soft-skills) .skill-item:nth-child(2) .circle { stroke: #e74c3c; }
+.skills-section:not(.soft-skills) .skill-item:nth-child(3) .circle { stroke: #2ecc71; }
+.soft-skills .skill-item:nth-child(1) .circle { stroke: #f39c12; }
+.soft-skills .skill-item:nth-child(2) .circle { stroke: #9b59b6; }
+
+.skill-item:hover .circular-chart {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+@keyframes loadChart {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.chart-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .skill-item {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 30px;
+    }
+}
+.profile-image1 {
+    width: 30px; 
+    height: 30px; 
+    border: none;
+    margin-right: 10px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+h2{
+    font-weight: bold;
+}
+
+

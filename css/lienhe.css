@@ -1,0 +1,162 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 56px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.profile-image1 {
+    width: 30px; 
+    height: 30px;
+    border: none;
+    margin-right: 10px; 
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+h2{
+    font-weight: bold;
+}
+
+#contact {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+   }
+   
+   .contact-info {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    max-width: 650px;
+    margin: auto; 
+   }
+   
+   .contact-info:hover {
+    transform: translateY(-5px);
+   }
+   
+   .contact-item {
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    align-items: center;
+   }
+   
+   .contact-item i {
+    font-size: 24px;
+    margin-right: 20px;
+    color: #007bff;
+    width: 50px; /* Đảm bảo tất cả các icon có cùng chiều rộng */
+    text-align: center;
+    flex-shrink: 0; /* Ngăn icon co lại */
+   }
+   
+   .contact-item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    flex-grow: 1; /* Cho phép text chiếm phần còn lại của không gian */
+   }
+   
+   .contact-item a:hover {
+    color: #007bff;
+   }
+   
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-back-home {
+    background-color: #63b7fc;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back-home:hover {
+    background-color: #329cf2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-back-home i {
+    margin-right: 8px;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+
+.btn-send-message {
+    background-color: #63b7fc;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-send-message:hover {
+    background-color: #329cf2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.contact-item i {
+    animation: pulse 2s infinite;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(99, 183, 252, 0.25);
+    border-color: #63b7fc;
+}
+
+
+
+
+
+
