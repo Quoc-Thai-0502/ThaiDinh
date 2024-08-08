@@ -37,6 +37,7 @@ h1 {
     font-weight: 700;
     margin-bottom: 1rem;
     margin-top: 50px;
+    font-family: 'Palatino', sans-serif;
 }
 
 #hero p {
@@ -52,6 +53,7 @@ h1 {
     margin-bottom: 50px;
     color: #2c3e50;
     margin-top: -80px;
+    font-family: 'Palatino', sans-serif;
 }
 
 .timeline {

@@ -113,6 +113,7 @@ h2{
     border-radius: 20px;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    
 }
 
 .category-item:hover {
@@ -159,6 +160,7 @@ header.bg-primary {
 header h1.display-4 {
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: 'Palatino', sans-serif;
 }
 
 header p.lead {

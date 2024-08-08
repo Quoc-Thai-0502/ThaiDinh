@@ -24,8 +24,12 @@ body {
 }
 h2{
     font-weight: bold;
+    font-family: 'Palatino', sans-serif;
 }
-
+h3{
+    font-family: 'Palatino', sans-serif;
+    font-weight: bold;
+}
 #contact {
     padding: 100px 0;
     background-color: #f8f9fa;

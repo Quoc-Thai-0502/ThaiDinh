@@ -6,6 +6,31 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.navbar-brand .thai {
+  color: #000000; /* Màu cho chữ THAI */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.navbar-brand .dinh {
+  color: #09c8af; /* Màu cho chữ DINH */
+  animation: slideInRight 1s ease-in-out;
+  animation-delay: 1s; /* Độ trễ để hiệu ứng của DINH bắt đầu sau THAI */
+
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+
+
+
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
     transition: background-color 0.3s ease;
@@ -16,6 +41,8 @@ body {
     margin-left: -1vh;
     color: #2c3e50 !important;
     transition: color 0.3s ease;
+    font-weight: bold;
+    font-family: 'Verdana', sans-serif;
     
 }
 
@@ -55,10 +82,12 @@ body {
 }
 
 .header h1 {
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeInDown 1s ease;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+  font-family: 'Georgia', sans-serif; /* Thay 'Roboto' bằng font chữ bạn muốn sử dụng */
 }
+
 
 .header .lead {
     font-size: 1rem;

@@ -41,6 +41,7 @@ body {
     position: relative;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-family: 'Palatino', sans-serif;
 }
 
 .section-title::after {
