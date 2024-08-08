@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
             labels: ['JavaScript', 'Python', 'SQL/NoSQL', 'HTML/CSS', 'Java', 'C++'],
             datasets: [{
-                label: 'Mức độ thông thạo (%)',
+                label: 'Proficiency level (%)',
                 data: [90, 85, 80, 88, 75, 70],
                 backgroundColor: [
                     'rgba(52, 152, 219, 0.8)',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 title: {
                     display: true,
-                    text: 'Mức độ thông thạo kỹ năng lập trình',
+                    text: 'Proficiency in programming skills',
                     font: {
                         size: 18
                     }
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var softSkillsChart = new Chart(ctxSoftSkills, {
         type: 'radar',
         data: {
-            labels: ['Làm việc nhóm', 'Giao tiếp', 'Quản lý thời gian', 'Giải quyết vấn đề', 'Sáng tạo'],
+            labels: ['Working group', 'Communicate', 'Time management', 'Problem solving', 'Creative'],
             datasets: [{
-                label: 'Mức độ thành thạo (%)',
+                label: 'Proficiency (%)',
                 data: [95, 90, 85, 88, 92],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 title: {
                     display: true,
-                    text: 'Mức độ thành thạo kỹ năng mềm',
+                    text: 'Level of soft skill proficiency',
                     font: {
                         size: 18
                     }

@@ -1,7 +1,11 @@
-const title = "Đinh Quốc Thái";
+const title = "Dinh Quoc Thai";
 let i = 0;
-const subtitle = 0;
-const description = "Tôi là Đinh Quốc Thái, sinh viên chuyên ngành kỹ sư phần mềm với đam mê sâu sắc đối với công nghệ và sáng tạo. Với hơn hai năm kinh nghiệm trong ngành, tôi đã có cơ hội làm việc trên nhiều dự án khác nhau, từ phát triển ứng dụng web đến thiết kế ứng dụng di động. Khả năng thích ứng nhanh chóng với các công nghệ mới và sự chăm sóc tận tâm trong việc tạo ra sản phẩm chất lượng là những điểm mạnh của tôi. Tôi luôn tìm kiếm những cơ hội để học hỏi và áp dụng các kỹ thuật tiên tiến nhằm cải thiện hiệu suất và trải nghiệm người dùng. Đối với tôi, mỗi dự án không chỉ là một thử thách mà còn là cơ hội để khám phá và phát triển bản thân. Nếu bạn có bất kỳ câu hỏi nào hoặc muốn tìm hiểu thêm về những dự án tôi đã thực hiện, hãy liên hệ với tôi. Tôi rất mong được hợp tác và cùng nhau tạo ra những sản phẩm tuyệt vời!";
+const subtitle = ""; // Nếu không có phụ đề, để rỗng hoặc xóa dòng này
+const description = "I am Dinh Quoc Thai, a student majoring in software engineering with a deep passion for technology and creativity. With over two years of experience in the industry, I have had the opportunity to work on a variety of projects, from web application development to mobile application design. The ability to quickly adapt to new technologies and dedicated care in creating quality products are my strengths. I'm always looking for opportunities to learn and apply cutting-edge techniques to improve performance and user experience. For me, each project is not only a challenge but also an opportunity for self-discovery and development. If you have any questions or want to learn more about the projects I've worked on, contact me. I look forward to collaborating and creating great products together!";
+
+// Load the typing sound
+const typingSound = new Audio('/ThaiDinh/Audio/gochu.mp3');
+typingSound.volume = 0.5; // Adjust the volume if needed
 
 let j = 0;
 let k = 0;
@@ -13,24 +17,32 @@ function typeWriter() {
 
     if (i < title.length) {
         titleElement.innerHTML += title.charAt(i);
+        typingSound.currentTime = 0; // Reset audio to start
+        typingSound.play(); // Play typing sound
         i++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 100); // Adjust timing as needed
     } else if (j < subtitle.length) {
         subtitleElement.innerHTML += subtitle.charAt(j);
+        typingSound.currentTime = 0; // Reset audio to start
+        typingSound.play(); // Play typing sound
         j++;
-        setTimeout(typeWriter, 50);
+        setTimeout(typeWriter, 50); // Adjust timing as needed
     } else if (k < description.length) {
         if (k === 0) {
             descriptionElement.style.opacity = 1;
             descriptionElement.style.animation = 'none';
         }
         descriptionElement.innerHTML += description.charAt(k);
+        typingSound.currentTime = 0; // Reset audio to start
+        typingSound.play(); // Play typing sound
         k++;
-        setTimeout(typeWriter, 20);
+        setTimeout(typeWriter, 20); // Adjust timing as needed
     }
 }
 
+// Ensure the typeWriter function is called when the window loads
 window.onload = typeWriter;
+
 
 // Particles.js configuration
 particlesJS('particles-js', {
@@ -41,7 +53,7 @@ particlesJS('particles-js', {
         opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
         size: { value: 9, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
         line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+        move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1500 } }
     },
     interactivity: {
         detect_on: "canvas",

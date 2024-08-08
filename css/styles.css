@@ -148,7 +148,7 @@ body {
 }
 
 #particles-js {
-  height: 845px; /* Điều chỉnh chiều cao */
+  height: 85%; /* Điều chỉnh chiều cao */
 }
 
 @keyframes profileFadeIn {

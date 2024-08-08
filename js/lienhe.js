@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
         form.reset();
         
-        alert('Tin nhắn của bạn đã được gửi thành công!');
+        alert('Your message has been sent successfully!');
     });
 });
 
