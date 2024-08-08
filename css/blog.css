@@ -159,6 +159,7 @@ header.bg-primary {
 
 header h1.display-4 {
     font-weight: 700;
+    margin-top: 50px;
     margin-bottom: 20px;
     font-family: 'Palatino', sans-serif;
 }

@@ -91,9 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nameInput.value = '';
         emailInput.value = '';
         messageInput.value = '';
-      }, function(error) {
-        console.log('Email failed to send:', error);
-        alert('Sorry, there was an error sending your message. Please try again later.');
-      });
+      },
+      );
     });
   });
