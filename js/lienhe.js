@@ -38,6 +38,38 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
   
+    // Xử lý gửi form
+    sendButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const name = nameInput.value;
+      const email = emailInput.value;
+      const message = messageInput.value;
+  
+      // Gửi email
+      window.location.href = `mailto:thaidinh23091@gmail.com?subject=Message from ${name}&body=${message}`;
+  
+      // Hiển thị thông báo
+      alert('Your message has been sent successfully!');
+  
+      // Đặt lại form
+      nameInput.value = '';
+      emailInput.value = '';
+      messageInput.value = '';
+    });
+  
+    // Xử lý click vào email
+    emailLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = `mailto:thaidinh23091@gmail.com`;
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lấy các phần tử cần thiết
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const sendButton = document.querySelector('.btn-send-message');
+  
     // Xử lý gửi email
     sendButton.addEventListener('click', function(e) {
       e.preventDefault();
@@ -46,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const message = messageInput.value;
   
       // Gửi email sử dụng EmailJS
-      emailjs.init('YOUR_USER_ID'); // Thay 'YOUR_USER_ID' bằng User ID của bạn
       emailjs.send('service_id', 'template_id', {
         from_name: name,
         from_email: email,
@@ -55,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(function(response) {
         console.log('Email sent successfully!', response.status, response.text);
         alert('Your message has been sent successfully!');
-  
+        
         // Đặt lại form
         nameInput.value = '';
         emailInput.value = '';
@@ -64,11 +95,5 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Email failed to send:', error);
         alert('Sorry, there was an error sending your message. Please try again later.');
       });
-    });
-  
-    // Xử lý click vào email
-    emailLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = `mailto:thaidinh23091@gmail.com`;
     });
   });
