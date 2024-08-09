@@ -51,6 +51,7 @@ body {
     color: #34495e !important;
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
+    
 }
 
 .nav-link::after {

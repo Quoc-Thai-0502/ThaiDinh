@@ -95,3 +95,53 @@ document.addEventListener('DOMContentLoaded', function() {
       );
     });
   });
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star-rating .star');
+    const ratingInput = document.getElementById('ratingValue');
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    // Star rating functionality
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = this.getAttribute('data-rating');
+            ratingInput.value = rating;
+            stars.forEach(s => s.classList.remove('active'));
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add('active');
+            }
+        });
+    });
+
+    // Submit review
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const rating = ratingInput.value;
+        const name = document.getElementById('reviewerName').value;
+        const text = document.getElementById('reviewText').value;
+
+        if (rating && name && text) {
+            addReview(rating, name, text);
+            reviewForm.reset();
+            stars.forEach(s => s.classList.remove('active'));
+        }
+    });
+
+    function addReview(rating, name, text) {
+      const reviewItem = document.createElement('div');
+      reviewItem.className = 'review-item';
+      const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      reviewItem.innerHTML = `
+          <div class="rating">${'★'.repeat(rating)}${'☆'.repeat(5-rating)}</div>
+          <div class="reviewer-name">${name}</div>
+          <div class="review-text">${text}</div>
+          <div class="review-date">${date}</div>
+      `;
+      reviewsList.prepend(reviewItem);
+  }
+});
