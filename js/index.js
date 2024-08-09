@@ -26,7 +26,7 @@ function typeWriter() {
         }
         descriptionElement.innerHTML += description.charAt(k);
         k++;
-        setTimeout(typeWriter, 30); // Điều chỉnh thời gian như cần
+        setTimeout(typeWriter, 1); // Điều chỉnh thời gian như cần
     }
 }
 

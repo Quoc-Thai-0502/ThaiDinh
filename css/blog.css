@@ -26,7 +26,6 @@ h2{
     font-weight: bold;
 }
 
-
 .profile-image1:hover {
     transform: scale(1.1);
 }
@@ -151,7 +150,8 @@ h2{
     color: #fff;
 }
 header.bg-primary {
-    background-color: #3498db !important; 
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
     color: white;
     padding: 60px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -162,11 +162,13 @@ header h1.display-4 {
     margin-top: 50px;
     margin-bottom: 20px;
     font-family: 'Palatino', sans-serif;
+    color: #000;
 }
 
 header p.lead {
     font-size: 1.2rem;
     font-weight: 300;
+    color: #000;
 }
 
 .header-image {

@@ -75,7 +75,7 @@ body {
     background: linear-gradient(135deg, #3498db, #2c3e50);
     color: white;
     padding: 100px 0;
-    height: 80%;
+    height: 100%;
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
@@ -177,7 +177,12 @@ body {
 }
 
 #particles-js {
-  height: 845px; /* Điều chỉnh chiều cao */
+  width: 100%;
+  height: 1800px; /* Thay đổi giá trị này để thiết lập chiều cao mong muốn */
+  background-color: #333;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 @keyframes profileFadeIn {
@@ -191,16 +196,16 @@ body {
   }
 }
 .introduce-btn {
-    background-color: #8bbde6; /* Màu xanh lá cây */
+    background-color: #8bbde6; 
     color: white;
     padding: 5px 32px;
     text-align: center;
     text-decoration: none;
     border-radius: 20px;
     border: none;
-    font-size: 20px;
-    margin: 30px 100px; /* Tạo khoảng cách và căn giữa */
-    display: block; /* Căn giữa theo chiều ngang */
+    font-size: 25px;
+    margin: 80px 100px; 
+    display: block; 
     justify-content: flex-start;
 }
 
@@ -347,6 +352,7 @@ body,
 
 #app {
   height: 100vh;
+  margin-top: 40px;
 }
 
 .summary {
