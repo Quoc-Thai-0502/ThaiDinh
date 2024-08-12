@@ -27,7 +27,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/ThaiDinh/index.html">
-                                <i class="bi bi-house-door"></i> Introduce
+                                <i class="bi bi-house"></i> Introduce
                             </a>
                         </li>
                         <li class="nav-item">
@@ -89,30 +89,74 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="contact-item">
-                                        <p><i class="fas fa-envelope"></i>thaidinh23091@gmail.com</p>
+                                        <p><i class="bi bi-envelope-at icon-mail">  </i> thaidinh23091@gmail.com</p>
                                     </div>
+                                    <style>
+                                        .icon-mail {
+                                          color: #000000;
+                                          margin-left: 15px;
+                                          padding-bottom: none;
+                                            
+                                        }
+                                        </style>
                                     <div class="contact-item">
-                                        <p><i class="fas fa-phone"></i>(+84) 343 888 776</p>
+                                        <p><i class="bi bi-telephone-forward-fill icon-phone">  </i>(+84) 343 888 776</p>
                                     </div>
+                                    <style>
+                                        .icon-phone {
+                                          color: #63ce3d;
+                                          margin-left: 15px;
+                                          padding-bottom: none;
+                                          padding-top: none;
+                                        }
+                                        </style>
                                     <div class="contact-item">
-                                        <p><i class="fas fa-map-marker-alt"></i>Ho Chi Minh City, Vietnam</p>
+                                        <p><i class="fa-solid fa-location-arrow custom-icon-color"></i>Ho Chi Minh City, Vietnam </p>
+                                          <style>
+                                          .custom-icon-color {
+                                            color: #53a4da; /* Thay đổi mã màu này theo ý muốn */
+                                          }
+                                          </style>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-item">
-                                        <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/thai.dinh.3367174?mibextid=LQQJ4d" target="_blank">facebook.com/dinhquocthai</a></p>
-                                    </div>
+                                        <p><i class="fab fa-facebook facebook-icon"></i> <a href="https://www.facebook.com/thai.dinh.3367174?mibextid=LQQJ4d" target="_blank">facebook.com/dinhquocthai</a></p>
+                                       </div>
+                                       
+                                       <style>
+                                       .facebook-icon {
+                                         color: #1877F2;
+                                         margin-top: 7px;
+                                         padding: none;
+                                       }
+                                       </style>
                                     <div class="contact-item">
-                                        <p><i class="fab fa-github"></i> <a href="https://github.com/Quoc-Thai-0502" target="_blank">github.com/dinhquocthai</a></p>
-                                    </div>
+                                        <p><i class="fab fa-github github-icon"></i> <a href="https://github.com/Quoc-Thai-0502" target="_blank">github.com/dinhquocthai</a></p>
+                                       </div>
+                                       
+                                       <style>
+                                       .github-icon {
+                                         color: #000000;
+                                         margin-top: 10px;
+                                         margin-bottom: 10px;
+                                         padding: none;
+                                       }
+                                       </style>
                                     <div class="contact-item">
-                                        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/thái-đinh-676a1a300/?trk=public-profile-join-page" target="_blank">linkedin.com/dinhquocthai</a></p>
-                                    </div>
+                                        <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/thái-đinh-676a1a300/?trk=public-profile-join-page" target="_blank">linkedin.com/dinhquocthai</a></p>
+                                       </div>
+                                       
+                                       <style>
+                                       .linkedin-icon {
+                                         color: #0A66C2;
+                                       }
+                                       </style>
                                 </div>
-                                <<div class="row justify-content-center mb-3">
+                                <div class="row justify-content-center mb-3">
                                     <div class="col-auto btn-download-cv-container">
                                         <a href="/ThaiDinh/CV/CV DINH QUOC THAI.pdf" class="btn btn-primary btn-download-cv" download>
-                                            <i class="fas fa-download me-2"></i>Download CV
+                                            <i class="fas fa-download me-2"></i>Download CV <i class="bi bi-filetype-pdf"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -135,7 +179,7 @@
                                     <textarea class="form-control" id="message" rows="5" placeholder="Message content" required></textarea>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-send-message">Send Message</button>
+                                    <button type="submit" class="btn btn-primary btn-send-message ">Send <i class="bi bi-send"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -163,15 +207,13 @@
                                     <input type="hidden" id="ratingValue" name="rating" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="reviewerName" class="form-label">Your Name:</label>
-                                    <input type="text" class="form-control" id="reviewerName" required>
+                                    <input type="text" class="form-control" id="name" placeholder="Name" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="reviewText" class="form-label">Your Review:</label>
-                                    <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+                                    <textarea class="form-control" id="reviewText" rows="3" placeholder="Review" required></textarea>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </form>
                         </div>

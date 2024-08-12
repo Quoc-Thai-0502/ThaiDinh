@@ -59,7 +59,6 @@ h3{
    .contact-item i {
     font-size: 24px;
     margin-right: 20px;
-    color: #007bff;
     width: 50px; /* Đảm bảo tất cả các icon có cùng chiều rộng */
     text-align: center;
     flex-shrink: 0; /* Ngăn icon co lại */
@@ -340,3 +339,6 @@ h3{
 #reviewsList::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+
+

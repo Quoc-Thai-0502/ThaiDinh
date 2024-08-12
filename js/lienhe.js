@@ -96,52 +96,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
-
-
-
   document.addEventListener('DOMContentLoaded', function() {
-    const stars = document.querySelectorAll('.star-rating .star');
-    const ratingInput = document.getElementById('ratingValue');
-    const reviewForm = document.getElementById('reviewForm');
+    const form = document.getElementById('reviewForm');
     const reviewsList = document.getElementById('reviewsList');
+    const stars = document.querySelectorAll('.star-rating .star');
+    const ratingValue = document.getElementById('ratingValue');
 
-    // Star rating functionality
+    // Xử lý sự kiện click cho star rating
     stars.forEach(star => {
         star.addEventListener('click', function() {
             const rating = this.getAttribute('data-rating');
-            ratingInput.value = rating;
-            stars.forEach(s => s.classList.remove('active'));
-            for (let i = 0; i < rating; i++) {
-                stars[i].classList.add('active');
-            }
+            ratingValue.value = rating;
+            updateStars(rating);
         });
     });
 
-    // Submit review
-    reviewForm.addEventListener('submit', function(e) {
+    // Hàm cập nhật hiển thị sao
+    function updateStars(rating) {
+        stars.forEach(star => {
+            const starRating = star.getAttribute('data-rating');
+            if (starRating <= rating) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+
+    // Xử lý sự kiện submit form
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const rating = ratingInput.value;
-        const name = document.getElementById('reviewerName').value;
-        const text = document.getElementById('reviewText').value;
 
-        if (rating && name && text) {
-            addReview(rating, name, text);
-            reviewForm.reset();
-            stars.forEach(s => s.classList.remove('active'));
+        // Lấy giá trị từ form
+        const rating = ratingValue.value;
+        const name = document.getElementById('name').value;
+        const reviewText = document.getElementById('reviewText').value;
+        const date = new Date().toLocaleDateString();
+
+        // Kiểm tra xem đã chọn số sao chưa
+        if (!rating) {
+            alert('Vui lòng chọn số sao đánh giá.');
+            return;
         }
-    });
 
-    function addReview(rating, name, text) {
-      const reviewItem = document.createElement('div');
-      reviewItem.className = 'review-item';
-      const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      reviewItem.innerHTML = `
-          <div class="rating">${'★'.repeat(rating)}${'☆'.repeat(5-rating)}</div>
-          <div class="reviewer-name">${name}</div>
-          <div class="review-text">${text}</div>
-          <div class="review-date">${date}</div>
-      `;
-      reviewsList.prepend(reviewItem);
-  }
+        // Tạo phần tử đánh giá mới
+        const newReview = document.createElement('div');
+        newReview.className = 'review-item mb-4';
+        newReview.innerHTML = `
+            <div class="review-header">
+                <span class="review-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span>
+            </div>
+            <div class="review-info">
+                <span class="review-name"><strong>${name}</strong></span>
+                <span class="review-date"><strong>${date}</strong></span>
+            </div>
+            <div class="review-content mt-2">${reviewText}</div>
+        `;
+
+        // Thêm đánh giá mới vào đầu danh sách
+        reviewsList.insertBefore(newReview, reviewsList.firstChild);
+
+        // Reset form
+        form.reset();
+        updateStars(0);
+        ratingValue.value = '';
+    });
 });
