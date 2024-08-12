@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Kiểm tra xem đã chọn số sao chưa
         if (!rating) {
-            alert('Vui lòng chọn số sao đánh giá.');
+            alert('Please select star rating.');
             return;
         }
 
