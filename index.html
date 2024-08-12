@@ -157,13 +157,30 @@
         <h1 class="Minigame">Mini Game</h1>
         <style>
             .Minigame{
-                margin-top: 100px;
+                margin-top: 80px;
             }
         </style>
         <div id="app">
             <div class="summary">
-                <h1 class="title">Oẳn!!!</h1>
-                <h1 class="title">Tù!!!  Xì!!!</h1>
+                <h1 class="title">
+                    <span class="top">Oẳn!!!</span>
+                    <span class="bottom">Tù!!! Xì!!!</span>
+                  </h1>
+                <style>
+                    .title {
+                    text-align: center;
+                    font-size: 40px;
+                    line-height: 1;
+                    }
+
+                    .top {
+                    display: block;
+                    }
+
+                    .bottom {
+                    display: block;
+                    }
+                </style>
                 <br />
                 <h1 id="inGame"></h1>
                 <h3 id="result"></h3>
