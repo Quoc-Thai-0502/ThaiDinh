@@ -116,12 +116,14 @@ h1 {
 }
 
 .timeline-content h3 {
-    color: #3498db;
+    color: #4987c1;
     margin-bottom: 15px;
+    margin-left: -40px;
 }
 
 .timeline-content p {
     margin-bottom: 5px;
+    margin-left: -40px;
 }
 
 .timeline-content ul {

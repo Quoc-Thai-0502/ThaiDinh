@@ -52,7 +52,7 @@ body {
     position: relative;
     width: 46%;
     padding: 20px;
-    border: 1px solid #d4d4d4;
+    border: 2px solid #858585;
     border-radius: 8px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
     background-color: #fff;
@@ -110,7 +110,7 @@ body {
     top: 16px;
     left: 50%;
     margin-left: -25px;
-    background-color: #007bff;
+    background-color: #58b6c4;
     z-index: 100;
     border-radius: 50%;
     color: #fff;
@@ -118,7 +118,7 @@ body {
 
 .education-item h3 {
     margin-top: 0;
-    color: #007bff;
+    color: #4987c1;
 }
 
 .education-item p {

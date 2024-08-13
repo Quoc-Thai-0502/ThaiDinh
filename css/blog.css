@@ -37,7 +37,7 @@ h2{
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #007bff;
+    color: #3498db;
 }
 
 #contact {
@@ -46,11 +46,14 @@ h2{
 }
 
 .blog-post {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     margin-bottom: 30px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
 }
 
@@ -60,34 +63,62 @@ h2{
 }
 
 .blog-post h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 10px;
     color: #2c3e50;
+    flex-grow: 0;
 }
 
 .blog-post .metadata {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #7f8c8d;
     margin-bottom: 15px;
+    flex-grow: 0;
 }
 
 .blog-post .excerpt {
     margin-bottom: 15px;
     line-height: 1.6;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    /* Thay thế -webkit-line-clamp */
+    max-height: 4.8em; /* 3 dòng * 1.6 line-height */
+    position: relative;
 }
-
+.blog-post .excerpt::after {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 40px;
+    background: linear-gradient(to right, transparent, white 50%);
+}
 .read-more {
+    align-self: flex-start;
+    margin-top: auto;
     display: inline-block;
     padding: 8px 15px;
     background-color: #3498db;
+    justify-items: center;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 25px;
     text-decoration: none;
+    margin-left: 105px;
     transition: background-color 0.3s ease;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-6 {
+    display: flex;
+    margin-bottom: 30px;
 }
 
 .read-more:hover {
-    background-color: #2980b9;
+    background-color: #8bbde6;
 }
 
 .card {
@@ -107,22 +138,24 @@ h2{
 .category-item {
     cursor: pointer;
     padding: 8px 15px;
-    margin: 5px;
+    margin: 10px;
     background-color: #f1f3f5;
-    border-radius: 20px;
+    border-radius: 25px;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 505;
+    
     
 }
 
 .category-item:hover {
-    background-color: #007bff;
+    background-color: #3498db;
     color: white;
     box-shadow: 0 2px 5px rgba(0,123,255,0.3);
 }
 
 #pagination .page-link {
-    color: #3498db;
+    color: #8bbde6;
     border: none;
     margin: 0 3px;
     border-radius: 4px;
@@ -141,12 +174,12 @@ h2{
 .input-group .btn {
     border-left: none;
     background-color: #fff;
-    color: #007bff;
+    color: #3498db;
     transition: all 0.3s ease;
 }
 
 .input-group .btn:hover {
-    background-color: #007bff;
+    background-color: #3498db;
     color: #fff;
 }
 header.bg-primary {

@@ -267,8 +267,8 @@ h3{
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #3498db;
+    border-color: #3498db;
     border-radius: 25px;
     padding: 10px 20px;
     font-weight: 600;
@@ -276,8 +276,8 @@ h3{
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #8bbde6;
+    border-color: #8bbde6;
 }
 
 #reviewsList {
