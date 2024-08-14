@@ -62,7 +62,7 @@ body {
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #3498db;
+    background-color: #6db6e3;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
@@ -73,22 +73,29 @@ body {
     transform: scaleX(1);
 }
 
+
 .header {
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    color: white;
-    padding: 100px 0;
-    height: 100%;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  background-color: linear-gradient(15deg, rgba(63, 142, 166, 0.8), rgba(44, 62, 80, 0.8)); /* Nền với độ trong suốt */
+  color: none;
+  padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2rem;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0.91; /* Đặt mức độ trong suốt, giá trị từ 0 (hoàn toàn trong suốt) đến 1 (không trong suốt) */
 }
+
 
 .header h1 {
   font-weight: 700;
+  text-align: center;
   margin-bottom: 1rem;
   animation: fadeInDown 1s ease;
   font-family: 'Georgia', sans-serif; /* Thay 'Roboto' bằng font chữ bạn muốn sử dụng */
   padding-top: 75px;
+  z-index: 0;
 }
 
 
@@ -100,6 +107,7 @@ body {
 
 .header .row {
     align-items: center;
+    
 }
 
 .profile-image {
@@ -111,7 +119,10 @@ body {
     overflow: hidden;
     border: 8px solid transparent; /* Kích thước và kiểu viền */
     box-shadow: 0 0 20px rgba(81, 217, 227, 0.8); /* Ánh sáng lung linh bên ngoài */
-    animation: border-glow 2s infinite alternate; /* Hiệu ứng lung linh viền */
+    animation: border-glow 3s infinite alternate; /* Hiệu ứng lung linh viền */
+    position: relative;
+    overflow: visible;
+   
 }
 
 .profile-image::before {
@@ -122,17 +133,12 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(104, 213, 238, 0.7); /* Bóng xanh lung linh */
+    box-shadow: 0 0 20px rgba(104, 213, 238, 0.7); /* Bóng xanh lung linh */
     pointer-events: painted; /* Đảm bảo không ảnh hưởng đến tương tác với hình ảnh */
+    position: relative;
+    
 }
 
-
-.profile-image {
-  position: relative;
-  overflow: visible;
-  width: 300px; /* Điều chỉnh kích thước theo nhu cầu */
-  height: 300px; /* Điều chỉnh kích thước theo nhu cầu */
-}
 
 .profile-image img {
   border-radius: 50%;
@@ -142,6 +148,8 @@ body {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
+  position: sticky;
+  z-index: 1;
 }
 
 .profile-image:hover img {
@@ -156,12 +164,12 @@ body {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  border-radius: 50%;
-  z-index: -1;
+  border-radius: 140px;
+  z-index: -10;
 }
 
 .profile-image::before {
-  background: conic-gradient(from 0deg, transparent, #00ffff 45deg, transparent 90deg);
+  background: conic-gradient(from 0deg, transparent, #a006ff 45deg, transparent 90deg);
   animation: rotateBorder 3s linear infinite;
 }
 
@@ -180,13 +188,23 @@ body {
 }
 
 #particles-js {
+  display: flex;
   width: 100%;
-  height: 2000px; /* Thay đổi giá trị này để thiết lập chiều cao mong muốn */
-  background-color: #333;
-  background-size: cover;
-  background-position: 50% 50%;
+  height: 1700px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(44, 62, 80, 0.9)); /* Giảm độ trong suốt để làm nền đậm hơn */
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Đảm bảo phần tử nằm dưới các thành phần khác */
 }
+@media (max-width: 768px) {
+  #particles-js {
+    height: 1000px; /* Điều chỉnh chiều cao cho thiết bị di động */
+  }
+}
+
+
 
 @keyframes profileFadeIn {
   from {
@@ -218,7 +236,7 @@ body {
     align-items: center;
 }
 
-  .theme-switch-wrapper {
+.theme-switch-wrapper {
   display: flex;
   align-items: center;
   margin-left: 20px;
@@ -338,10 +356,6 @@ body.dark-mode .header {
 }
 
 
-
-
-
-
 :root {
   box-sizing: border-box;
 }
@@ -399,8 +413,6 @@ body,
   -ms-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
   -o-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
 }
-
-
 
 
 
