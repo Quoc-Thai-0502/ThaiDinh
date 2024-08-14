@@ -7,7 +7,7 @@ body {
 }
 
 .navbar-brand .thai {
-  color: #000000; /* Màu cho chữ THAI */
+  color: #989898; /* Màu cho chữ THAI */
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -72,6 +72,11 @@ body {
     visibility: visible;
     transform: scaleX(1);
 }
+.navbar-nav {
+  display: flex;
+  gap: 10px; 
+}
+
 
 
 .header {

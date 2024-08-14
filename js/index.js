@@ -30,6 +30,7 @@ function typeWriter() {
     }
 }
 
+
 // Đảm bảo hàm typeWriter được gọi khi cửa sổ tải
 window.onload = typeWriter;
 
