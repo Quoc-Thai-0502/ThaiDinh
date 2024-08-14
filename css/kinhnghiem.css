@@ -65,8 +65,8 @@ h1 {
 .timeline::after {
     content: '';
     position: absolute;
-    width: 3px;
-    background-color: #bdc4ca;
+    width: 2px;
+    background-color: #e4e8e7;
     top: 0;
     bottom: 0;
     left: 50%;
