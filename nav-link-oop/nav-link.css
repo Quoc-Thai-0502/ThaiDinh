@@ -1,5 +1,4 @@
 .nav-link.active {
-    
     color:#3d78af !important;
     transform: scale(1.1); /* Màu cho liên kết trang hiện tại, có thể thay đổi */
   }

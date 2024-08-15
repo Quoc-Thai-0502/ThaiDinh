@@ -1,39 +1,133 @@
-const title = "Dinh Quoc Thai";
-let i = 0;
-const subtitle = ""; // Nếu không có phụ đề, để rỗng hoặc xóa dòng này
-const description = "I am Dinh Quoc Thai, a software engineering student with a deep passion for technology and creativity. With over two years of experience in the industry, I have had the opportunity to work on a variety of projects ranging from web application development to mobile application design. The ability to quickly adapt to new technologies and take dedicated care in creating quality products are my strengths. I'm always looking for opportunities to learn and apply cutting-edge techniques to improve performance and user experience. For me, each project is not only a challenge but also an opportunity for self-discovery and development. If you have any questions or want to learn more about the projects I've worked on, contact me. I look forward to collaborating and creating great products together!";
+const title = "Hi, I'm ThaiDinh";
+const subtitle = "Software Engineering Student";
+const description = "I am a software engineering student with a deep passion for technology and creativity. With over two years of industry experience, I've worked on various projects from web to mobile application development. My strengths lie in quick adaptation to new technologies and dedication to creating quality products. I constantly seek opportunities to learn and apply cutting-edge techniques to enhance performance and user experience. Each project is both a challenge and an opportunity for growth. Feel free to contact me for any inquiries or potential collaborations. Let's create great products together!";
 
-let j = 0;
-let k = 0;
+let titleIndex = 0;
+let subtitleIndex = 0;
+let descriptionIndex = 0;
 
 function typeWriter() {
     const titleElement = document.getElementById("typing-title");
     const subtitleElement = document.getElementById("typing-subtitle");
     const descriptionElement = document.getElementById("typing-description");
 
-    if (i < title.length) {
-        titleElement.innerHTML += title.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100); // Điều chỉnh thời gian như cần
-    } else if (j < subtitle.length) {
-        subtitleElement.innerHTML += subtitle.charAt(j);
-        j++;
-        setTimeout(typeWriter, 50); // Điều chỉnh thời gian như cần
-    } else if (k < description.length) {
-        if (k === 0) {
+    if (titleIndex < title.length) {
+        titleElement.innerHTML += title.charAt(titleIndex);
+        titleIndex++;
+        setTimeout(typeWriter, 100);
+    } else if (subtitleIndex < subtitle.length) {
+        subtitleElement.innerHTML += subtitle.charAt(subtitleIndex);
+        subtitleElement.style.opacity = 1;
+        subtitleIndex++;
+        setTimeout(typeWriter, 50);
+    } else if (descriptionIndex < description.length) {
+        if (descriptionIndex === 0) {
             descriptionElement.style.opacity = 1;
             descriptionElement.style.animation = 'none';
         }
-        descriptionElement.innerHTML += description.charAt(k);
-        k++;
-        setTimeout(typeWriter, 25); // Điều chỉnh thời gian như cần
+        descriptionElement.innerHTML += description.charAt(descriptionIndex);
+        descriptionIndex++;
+        setTimeout(typeWriter, 20);
     }
 }
 
+// Thêm CSS để tạo kiểu chữ chuyên nghiệp và căn trái chữ
+const style = document.createElement('style');
+style.textContent = `
+    body {
+        font-family: 'Roboto', 'Palatino', 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+        background-color: #E2E2E2;
+        margin: 0;
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .main-container {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .text-container {
+        flex: 1;
+        text-align: left;
+        padding-left: 20px;
+    }
+    #typing-title {
+        text-align: left;
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-top: 20px;
+        color: #E2E2E2;
+    }
+    #typing-subtitle {
+        text-align: left;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #f1f1f1;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    #typing-description {
+        text-align: left;
+        font-size: 1em;
+        line-height: 1,8;
+        color: #f1f1f1;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+`;
+document.head.appendChild(style);
 
-// Đảm bảo hàm typeWriter được gọi khi cửa sổ tải
-window.onload = typeWriter;
+// Bắt đầu hiệu ứng gõ chữ khi trang được tải
+window.onload = function() {
+    // Tạo main container
+    const mainContainer = document.createElement('div');
+    mainContainer.className = 'main-container';
+    
+    // Tạo image container
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
+    const img = document.createElement('img');
+    img.src = 'path/to/your/image.jpg'; // Thay đổi đường dẫn này thành đường dẫn thực tế của hình ảnh của bạn
+    img.alt = 'Profile Image';
+    imageContainer.appendChild(img);
+    
+    // Tạo text container
+    const textContainer = document.createElement('div');
+    textContainer.className = 'text-container';
+    
+    // Tạo và thêm các phần tử văn bản vào text container
+    const titleElement = document.createElement('div');
+    titleElement.id = 'typing-title';
+    textContainer.appendChild(titleElement);
 
+    const subtitleElement = document.createElement('div');
+    subtitleElement.id = 'typing-subtitle';
+    textContainer.appendChild(subtitleElement);
+
+    const descriptionElement = document.createElement('div');
+    descriptionElement.id = 'typing-description';
+    textContainer.appendChild(descriptionElement);
+
+    // Thêm image container và text container vào main container
+    mainContainer.appendChild(imageContainer);
+    mainContainer.appendChild(textContainer);
+
+    // Thêm main container vào body
+    document.body.appendChild(mainContainer);
+
+    // Bắt đầu hiệu ứng gõ chữ
+    typeWriter();
+};
 
 
 // Particles.js configuration
