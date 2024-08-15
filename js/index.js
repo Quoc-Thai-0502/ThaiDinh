@@ -93,7 +93,7 @@ particlesJS("particles-js", {
       },
       "move": {
         "enable": true,
-        "speed": 9, // Giảm tốc độ di chuyển để hạt dễ thấy hơn
+        "speed": 7, // Giảm tốc độ di chuyển để hạt dễ thấy hơn
         "direction": "left",
         "random": false,
         "straight": true,
@@ -147,4 +147,6 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
+  
+
   
