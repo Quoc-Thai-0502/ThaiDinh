@@ -22,6 +22,9 @@ body {
     border-radius: 50%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 }
+.profile-image1:hover {
+    transform: scale(1.1);
+    }
 h2{
     font-weight: bold;
     font-family: 'Palatino', sans-serif;
@@ -78,6 +81,9 @@ h3{
 
 .fade-in {
     animation: fadeIn 0.5s ease-out forwards;
+}
+.row{
+    margin-top: -25px;
 }
 
 @keyframes fadeIn {
@@ -170,7 +176,7 @@ h3{
     background-color: #63b7fc;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
-    margin-top: 30px;
+    margin-top: 60px;
     border: none;
 }
 

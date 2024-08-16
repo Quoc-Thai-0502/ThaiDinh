@@ -8,13 +8,13 @@ body {
 
 .navbar-brand .thai {
   color: #989898; /* Màu cho chữ THAI */
-  animation: fadeIn 1s ;
+  animation: fadeIn 5s ;
 }
 
 .navbar-brand .dinh {
   color: #09c8af; /* Màu cho chữ DINH */
   animation: slideInRight 1s ease-in-out;
-  animation: fadeIn 2s ease-in-out; /* Độ trễ để hiệu ứng của DINH bắt đầu sau THAI */
+  animation: fadeIn 5s ease-in-out; /* Độ trễ để hiệu ứng của DINH bắt đầu sau THAI */
 
 }
 
@@ -82,15 +82,14 @@ body {
 
 .header {
   display: flex;
-  background-color: linear-gradient(15deg, rgba(63, 142, 166, 0.8), rgba(30, 43, 56, 0.8)); /* Nền với độ trong suốt */
-  color: none;
   padding: 100px 0;
   width: 100%;
   height: 100%;
   margin-bottom: 2rem;
   position: absolute;
   overflow: hidden;
-  opacity: 0.935; /* Đặt mức độ trong suốt, giá trị từ 0 (hoàn toàn trong suốt) đến 1 (không trong suốt) */
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -105,17 +104,9 @@ body {
 }
 
 
-.header .lead {
-    font-size: 1rem;
-    font-weight: 300;
-    animation: fadeInUp 1s ease 0.5s both;
+.col-md-6 {
+  margin-top: 25px;
 }
-
-.header .row {
-    align-items: center;
-    
-}
-
 .profile-image {
     position: relative;
     width: 310px;
@@ -123,7 +114,7 @@ body {
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 8px solid transparent; /* Kích thước và kiểu viền */
+    border: 4px solid transparent; /* Kích thước và kiểu viền */
     box-shadow: 0 0 20px rgba(81, 217, 227, 0.8); /* Ánh sáng lung linh bên ngoài */
     animation: border-glow 3s infinite alternate; /* Hiệu ứng lung linh viền */
     position: relative;
@@ -139,7 +130,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(104, 213, 238, 0.7); /* Bóng xanh lung linh */
+    box-shadow: 0 0 4px rgba(104, 213, 238, 0.7); /* Bóng xanh lung linh */
     pointer-events: painted; /* Đảm bảo không ảnh hưởng đến tương tác với hình ảnh */
     position: relative;
     
@@ -194,16 +185,30 @@ body {
 }
 
 #particles-js {
+  pointer-events: all;
   display: flex;
   width: 100%;
   height: 1700px;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(31, 44, 56, 0.9)); /* Giảm độ trong suốt để làm nền đậm hơn */
+  background-image: url('/ThaiDinh/image/Coder.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1; /* Đảm bảo phần tử nằm dưới các thành phần khác */
+  background-position: center;
 }
+#particles-js::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(49, 54, 55, 0.7), rgba(35, 33, 33, 0.5));
+  z-index: -1;
+ }
+
 @media (max-width: 768px) {
   #particles-js {
     height: 1000px; /* Điều chỉnh chiều cao cho thiết bị di động */
@@ -235,12 +240,6 @@ body {
     justify-content: flex-start;
 }
 
-
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .theme-switch-wrapper {
   display: flex;
@@ -347,7 +346,7 @@ body.dark-mode .header {
 .personal-info {
   text-align: left;
   margin-top: 20px;
-  margin-left: 160px;
+  margin-left: 110px;
   
 }
 
@@ -357,8 +356,24 @@ body.dark-mode .header {
 }
 
 .personal-info i {
-  width: 30px;
-  margin-right: 10px;
+  width: 195px;
+  margin-right: -10px;
+}
+.personal-info i1 {
+  width: 170px;
+  margin-right: -10px;
+}
+.personal-info i2 {
+  width: 145px;
+  margin-right: -10px;
+}
+.personal-info i3 {
+  width: 120px;
+  margin-right: -10px;
+}
+.personal-info i4 {
+  width: 45px;
+  margin-right: -10px;
 }
 
 
@@ -421,13 +436,12 @@ body,
 }
 
 
-
 .typing-erasing-effect {
   font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: typing-erasing 2.5s linear infinite;
+  animation: typing-erasing 8s linear infinite;
 }
 
 @keyframes typing-erasing {

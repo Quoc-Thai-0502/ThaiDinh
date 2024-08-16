@@ -20,20 +20,7 @@
                 <a class="navbar-brand typing-erasing-effect" href="https://www.facebook.com/thai.dinh.3367174?mibextid=LQQJ4d">
                     <span class="thai">THAI</span><span class="dinh">DINH</span>
                 </a>
-                <script>
-                    const typewriterElement = document.getElementById('typewriter');
-                    const text = 'THAI DINH';
-                    let index = 0;
-
-                    function typeWriter() {
-                    if (index < text.length) {
-                        typewriterElement.innerHTML += text.charAt(index);
-                        index++;
-                        setTimeout(typeWriter, 100); // Điều chỉnh tốc độ gõ chữ tại đây
-                    }
-                    }
-                    typeWriter();
-                </script>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -101,10 +88,10 @@
                         </div>
                         <div class="personal-info mt-3">
                             <p><i class="fas fa-mars"></i> Male </p>
-                            <p><i class="fas fa-birthday-cake"></i> 05/02/2004 </p>
-                            <p><i class="fas fa-phone"></i> (+84) 343 888 776 </p>
-                            <p><i class="fas fa-envelope"></i> thaidinh23091@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> 12 Street No. 42, Thao Dien Ward, Thu Duc City</p>
+                            <p><i1 class="fas fa-birthday-cake"></i1> 05/02/2004 </p>
+                            <p><i2 class="fas fa-phone"></i2> (+84) 343 888 776 </p>
+                            <p><i3 class="fas fa-envelope"></i3> thaidinh23091@gmail.com</p>
+                            <p><i4 class="fas fa-map-marker-alt"></i4> 12 Street No. 42, Thao Dien Ward, Thu Duc City</p>
                         </div>
                     </div>
                 </div>
@@ -125,9 +112,8 @@
                 {
                     width: 15px;
                     height: 15px;
-                    
-                    border-right: 4px solid #333;
-                    border-bottom: 4px solid #333;
+                    border-right: 4px solid #b3b3b3;
+                    border-bottom: 4px solid #b3b3b3;
                     transform: rotate(45deg);
                     animation: bounce 2s infinite;
                     transition: opacity 0.3s ease;

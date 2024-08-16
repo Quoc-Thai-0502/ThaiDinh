@@ -52,9 +52,9 @@ body {
     position: relative;
     width: 46%;
     padding: 20px;
-    border: 2px solid #858585;
+    border: 1px solid #858585;
     border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
     background-color: #fff;
 }
 
@@ -184,7 +184,11 @@ body {
     object-fit: contain;/* Ensure the image covers the area */
     border-radius: 50%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    
 }
+.profile-image:hover {
+    transform: scale(1.1);
+    }
 h2{
     font-weight: bold;
     font-family: 'Palatino', sans-serif;

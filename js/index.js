@@ -34,6 +34,23 @@ function typeWriter() {
 // Thêm CSS để tạo kiểu chữ chuyên nghiệp và căn trái chữ
 const style = document.createElement('style');
 style.textContent = `
+       #typing-title {
+        text-align: left;
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-top: 20px;
+        color: #E2E2E2;
+    }
+
+    #typing-title span {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 800;
+        font-style: italic ;
+    }
     body {
         font-family: 'Roboto', 'Palatino', 'Arial', sans-serif;
         line-height: 1.6;
@@ -58,7 +75,7 @@ style.textContent = `
     .text-container {
         flex: 1;
         text-align: left;
-        padding-left: 20px;
+        padding-left: 50px;
     }
     #typing-title {
         text-align: left;
@@ -74,7 +91,11 @@ style.textContent = `
         margin-top: 20px;
         color: #f1f1f1;
         opacity: 0;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.1s ease-in-out;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+    
     }
     #typing-description {
         text-align: left;
@@ -97,8 +118,6 @@ window.onload = function() {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
     const img = document.createElement('img');
-    img.src = 'path/to/your/image.jpg'; // Thay đổi đường dẫn này thành đường dẫn thực tế của hình ảnh của bạn
-    img.alt = 'Profile Image';
     imageContainer.appendChild(img);
     
     // Tạo text container
@@ -131,116 +150,20 @@ window.onload = function() {
 
 
 // Particles.js configuration
-particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 100,
-        "density": {
-          "enable": false,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#f1f1f1" // Màu trắng sáng cho hạt
-      },
-      "shape": {
-        "type": "star", // Kiểu hình dạng là ngôi sao
-        "stroke": {
-          "width": 0,
-          "color": "#ffffff"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "http://wiki.lexisnexis.com/academic/images/f/fb/Itunes_podcast_icon_300.jpg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 10, // Tăng độ mờ lên 1 để làm cho hạt rõ ràng nhất có thể
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0, // Độ mờ tối thiểu là 1
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 14, // Tăng kích thước của hạt
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 100,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": false,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 7, // Giảm tốc độ di chuyển để hạt dễ thấy hơn
-        "direction": "left",
-        "random": false,
-        "straight": true,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": false,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 200,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 200,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": true
-  });
-  
-
-  
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: "#ffffff" },
+    shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+    opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+    size: { value: 5, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+    move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+    modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+  },
+  retina_detect: true
+});
