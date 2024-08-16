@@ -1,5 +1,5 @@
 .nav-link.active {
-    color:#537ea5 !important;
+    color:#4386c5 !important;
    font-weight: 500;
     transform: scale(1.1); /* Màu cho liên kết trang hiện tại, có thể thay đổi */
   }
