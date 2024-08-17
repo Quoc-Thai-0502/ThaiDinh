@@ -347,35 +347,20 @@ body.dark-mode .header {
 .personal-info {
   text-align: left;
   margin-top: 20px;
-  margin-left: 110px;
+  margin-left: 165px;
   
 }
 
 .personal-info p {
-  margin-bottom: 1px;
+  margin-bottom: 5px;
   
 }
 
 .personal-info i {
-  width: 195px;
+  width: 50px;
   margin-right: -10px;
 }
-.personal-info i1 {
-  width: 170px;
-  margin-right: -10px;
-}
-.personal-info i2 {
-  width: 145px;
-  margin-right: -10px;
-}
-.personal-info i3 {
-  width: 120px;
-  margin-right: -10px;
-}
-.personal-info i4 {
-  width: 45px;
-  margin-right: -10px;
-}
+
 
 
 :root {
