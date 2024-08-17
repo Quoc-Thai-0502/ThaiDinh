@@ -176,10 +176,9 @@ body {
         right: auto;
     }
 }
-.profile-image {
+.profile-image5 {
     width: 30px; /* Adjust the size as needed */
     height: 30px; /* Adjust the size as needed */
-    border: none;
     margin-right: 10px; /* Space between the image and text */
     object-fit: contain;/* Ensure the image covers the area */
     border-radius: 50%;
