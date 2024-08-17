@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
     }
-  
     // Hàm xử lý khi scroll
     function handleScroll() {
       contactItems.forEach((item, index) => {
