@@ -3,281 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Dinh Quoc Thai</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link href="/ThaiDinh/css/styles.css" rel="stylesheet">
-    <link href="/ThaiDinh/Dark mod/styles.css" rel="stylesheet">
-    <link href="/ThaiDinh/nav-link-oop/nav-link.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
-
+    <title>Welcome to my Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+        }
+        h1 {
+            font-size: 3.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        .enter-button {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            background-color: #00a8ff;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 1s;
+            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+        }
+        .enter-button:hover {
+            background-color: #0097e6;
+            box-shadow: 0 6px 20px rgba(0, 168, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+                linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+                linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+                linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+                linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77),
+                linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+            z-index: 1;
+            animation: patternMove 20s linear infinite;
+        }
+        @keyframes patternMove {
+            0% { background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; }
+            100% { background-position: 80px 140px, 80px 140px, 120px 210px, 120px 210px, 80px 140px, 120px 210px; }
+        }
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 4s infinite alternate;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.1;
+            }
+        }
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        .loader {
+            width: 150px;
+            height: 150px;
+        }
+        .loader-text {
+            margin-top: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        #loading-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+       
+    </style>
 </head>
 <body>
-    <div id="particles-js">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand typing-erasing-effect" href="https://www.facebook.com/thai.dinh.3367174?mibextid=LQQJ4d">
-                    <span class="thai">THAI</span><span class="dinh">DINH</span>
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/index.html">
-                                <i class="bi bi-house"></i> Introduce
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/html/hocvan.html">
-                                <i class="bi bi-book"></i> Education
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/html/kynang.html">
-                                <i class="bi bi-tools"></i> Skill
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/html/kinhnghiem.html">
-                                <i class="bi bi-briefcase"></i> Experience
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/html/blog.html">
-                                <i class="bi bi-pencil"></i> Blog
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ThaiDinh/html/lienhe.html">
-                                <i class="bi bi-telephone"></i> Contact
-                            </a>
-                        </li>
-                    </ul>
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" />
-                            <div class="slider">
-                                <svg class="sun" viewBox="0 0 24 24">
-                                <path d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" />
-                                </svg>
-                                <svg class="moon" viewBox="0 0 24 24">
-                                <path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z" />
-                                </svg>
-                            </div>
-                            </label>
-                        </div>
-                </div>
-            </div>
-        </nav>
-    
-        <header class="header">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h1 id="typing-title"></h1>
-                        <p class="lead" id="typing-subtitle">About me! </p>
-                        <p class="lead" id="typing-description">
-                    </div>
-                    <div class="col-md-6 text-center ">
-                        <div class="profile-image">
-                            <img src="/ThaiDinh/image/Me.png" alt="Đinh Quốc Thái" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="personal-info mt-3">
-                            <p><i class="fas fa-mars"></i> Male </p>
-                            <p><i class="fas fa-birthday-cake"></i> 05/02/2004 </p>
-                            <p><i class="fas fa-phone"></i> (+84) 343 888 776 </p>
-                            <p><i class="fas fa-envelope"></i> thaidinh23091@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> 12 Street No. 42, Thao Dien Ward, Thu Duc City</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <li class="introduce-btn">
-                <a class="nav-link" href="/ThaiDinh/html/hocvan.html">Education</a>
-            </li>
-            <div class="muiten">
-                <div class="arrow-down" id="arrow"></div>
-              </div>
-              
-              <style>
-              .muiten {
-                display: flex;
-                justify-content: center;
-              }
-              .arrow-down {
-                width: 15px;
-                height: 15px;
-                margin-top: -15px;
-                border-right: 4px solid #b3b3b3;
-                border-bottom: 4px solid #b3b3b3;
-                transform: rotate(45deg);
-                animation: bounce 2s infinite;
-                transition: opacity 1s ease;
-                cursor: pointer;
-              }
-              @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% {
-                  transform: translateY(0) rotate(45deg);
-                }
-                40% {
-                  transform: translateY(-30px) rotate(45deg);
-                }
-                60% {
-                  transform: translateY(-15px) rotate(45deg);
-                }
-              }
-              </style>
-              
-              <script>
-              const arrow = document.getElementById('arrow');
-              let lastScrollTop = 0;
-              
-              window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop) {
-                  // Cuộn xuống
-                  arrow.style.opacity = '0';
-                } else {
-                  // Cuộn lên
-                  arrow.style.opacity = '1';
-                }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-              });
-              
-              arrow.addEventListener('click', function() {
-                window.scrollTo({
-                  top: window.innerHeight,
-                  behavior: 'smooth'
-                });
-              });
-              </script>
-            <h1 class="Minigame">Mini Game</h1>
-            <style>
-                .Minigame{
-                    margin-top: 80px;
-                }
-            </style>
-            <div id="app">
-                <div class="summary">
-                    <h1 class="title">
-                        <span class="top">Oẳn!!!</span>
-                        <span class="bottom">Tù!!! Xì!!!</span>
-                    </h1>
-                    <style>
-                        .title {
-                        text-align: center;
-                        font-size: 40px;
-                        line-height: 1;
-                        }
+    <div class="background-pattern"></div>
+    <div class="glow"></div>
+    <div class="container">
+        <h1>Welcome to my Portfolio</h1>
+        <p>Explore great projects and skills</p>
+        <button class="enter-button" onclick="enterPortfolio()">Start</button>
+    </div>
+    <div id="loading-overlay">
+        <svg class="loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradient)" stroke-width="8" stroke-linecap="round" stroke-dasharray="180 180" transform="rotate(-90 50 50)">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" values="360;0" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="50" cy="50" r="35" fill="none" stroke="url(#gradient)" stroke-width="6" stroke-linecap="round" stroke-dasharray="140 140" transform="rotate(90 50 50)">
+                <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" values="280;0" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="50" cy="50" r="25" fill="none" stroke="url(#gradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="100 100" transform="rotate(-90 50 50)">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" values="200;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <div class="loader-text">Loading</div>
+    </div>
 
-                        .top {
-                        display: block;
-                        }
+    <script>
+         
+         function enterPortfolio() {
+        console.log("enterPortfolio function called");
+        const container = document.querySelector('.container');
+        const loadingOverlay = document.getElementById('loading-overlay');
 
-                        .bottom {
-                        display: block;
-                        }
-                    </style>
-                    <br />
-                    <h1 id="inGame"></h1>
-                    <h3 id="result"></h3>
-                </div>
-                <div class="games">
-                    <div class="option" onclick="pickOption('🖐')">🖐</div>
-                    <div class="option" onclick="pickOption('✌')">✌</div>
-                    <div class="option" onclick="pickOption('✊')">✊</div>
-                </div>
-            </div>
-        </header>
-        
-        <script>
-            class Start {
-                constructor() {
-                    this.playerName = "Player"
-                    this.botName = "Deabot"
-                    this.playerOption;
-                    this.botOption;
-                    this.winner = ""
-                }
+        // Thêm trạng thái vào lịch sử duyệt web
+        window.history.pushState({page: 1}, "title 1", "#home");
 
-                get getBotOption() {
-                    return this.botOption;
-                }
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(-100px)';
 
-                set setBotOption(option) {
-                    this.botOption = option;
-                }
+        setTimeout(() => {
+            container.style.display = 'none';
+            loadingOverlay.classList.add('show');
+            console.log("Loading overlay should be visible now");
+            
+            setTimeout(() => {
+                window.location.href = '/ThaiDinh/html/introduce.html';
+            }, 900); // Đợi 0.9 giây trước khi chuyển trang
+        }, 900);
+    }
 
-                get getPlayerOption() {
-                    return this.playerOption
-                }
-
-                set setPlayerOption(option) {
-                    this.playerOption = option;
-                }
-
-                botBrain() {
-                    const option = ["🖐", "✌", "✊"];
-                    const bot = option[Math.floor(Math.random() * option.length)];
-                    return bot;
-                }
-
-                winCalculation() {
-                    if (this.botOption == "🖐" && this.playerOption == "✌") {
-                        return this.winner = this.playerName
-                    } else if (this.botOption == "🖐" && this.playerOption == "✊") {
-                        return this.winner = this.botName;
-                    } else if (this.botOption == "✌" && this.playerOption == "🖐") {
-                        return this.winner = this.botName;
-                    } else if (this.botOption == "✌" && this.playerOption == "✊") {
-                        return this.winner = this.playerName
-                    } else if (this.botOption == "✊" && this.playerOption == "🖐") {
-                        return this.winner = this.playerName
-                    } else if (this.botOption == "✊" && this.playerOption == "✌") {
-                        return this.winner = this.botName;
-                    } else {
-                        return this.winner = "SERI"
-                    }
-                }
-                matchResult() {
-                    if (this.winner != "SERI") {
-                        return `${this.winner} MENANG!`;
-                    } else {
-                        return `WAAA ${this.winner}, GAK ADA YG MENANG 🤪`;
-                    }
-                }
-            }
-
-            function pickOption(params) {
-                const start = new Start();
-                start.setPlayerOption = params;
-                start.setBotOption = start.botBrain();
-                start.winCalculation();
-
-                const inGame = document.getElementById("inGame");
-                const result = document.getElementById("result");
-
-                inGame.textContent = "..."
-                result.textContent = "..."
-
-                setTimeout(() => {
-                    inGame.textContent = `${start.getPlayerOption} VS ${start.getBotOption}`
-                    result.textContent = start.matchResult();
-                }, 1500);
-
-            }
-        </script>
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/ThaiDinh/js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/ThaiDinh/Dark mod/script.js"></script>
-    <script src="/ThaiDinh/nav-link-oop/nav-link.js"></script>
-</div>
+            // Xử lý khi người dùng nhấn nút "Back"
+            window.onpopstate = function(event) {
+                if (event.state && event.state.page === 1) {
+            // Hiển thị lại trang ban đầu khi người dùng quay lại
+            document.querySelector('.container').style.display = 'flex';
+            document.querySelector('.container').style.opacity = '1';
+            document.querySelector('.container').style.transform = 'translateY(0)';
+            document.getElementById('loading-overlay').classList.remove('show');
+        }
+    };
+        // Thêm hiệu ứng di chuyển cho glow
+        const glow = document.querySelector('.glow');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            glow.style.left = `${x * 100}%`;
+            glow.style.top = `${y * 100}%`;
+        });
+    </script>
 </body>
 </html>
