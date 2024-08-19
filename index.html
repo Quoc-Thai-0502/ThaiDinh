@@ -12,8 +12,8 @@
             height: 100%;
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #ffffff;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0, #d4d4d4);
+            color: #333333;
             overflow: hidden;
         }
         .container {
@@ -35,21 +35,25 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #1a1a1a;
         }
+
         p {
             font-size: 1.3em;
-            font-weight: 300;
+            font-weight: 400;
             margin-top: -10px;
             margin-bottom: 30px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards 0.5s;
+            color: #2a2a2a;
         }
         .enter-button {
             padding: 15px 40px;
             font-size: 1.2em;
-            background-color: #00a8ff;
+            background-color: #474747;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             color: white;
             border: none;
             border-radius: 50px;
@@ -58,11 +62,11 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards 1s;
-            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
         }
+
         .enter-button:hover {
-            background-color: #0097e6;
-            box-shadow: 0 6px 20px rgba(0, 168, 255, 0.6);
+            background-color: #393939;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             transform: translateY(-2px);
         }
         @keyframes fadeInUp {
@@ -78,15 +82,15 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
-                linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
-                linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
-                linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
-                linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77),
-                linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+                linear-gradient(30deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
+                linear-gradient(150deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
+                linear-gradient(30deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
+                linear-gradient(150deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
+                linear-gradient(60deg, #8a8a8add 25%, transparent 25.5%, transparent 75%, #8a8a8add 75%, #8a8a8add),
+                linear-gradient(60deg, #8a8a8add 25%, transparent 25.5%, transparent 75%, #8a8a8add 75%, #8a8a8add);
             background-size: 80px 140px;
             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
-            opacity: 0.05;
+            opacity: 0.15;
             z-index: 1;
             animation: patternMove 20s linear infinite;
         }
@@ -99,17 +103,18 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
             animation: pulse 4s infinite alternate;
         }
+
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                opacity: 0.3;
+                opacity: 0.4;
             }
             100% {
                 transform: scale(1.2);
-                opacity: 0.1;
+                opacity: 0.2;
             }
         }
         #loading-overlay {
@@ -118,7 +123,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(45deg, #f5f5f5, #e0e0e0, #d4d4d4);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -136,10 +141,10 @@
             margin-top: 30px;
             font-family: 'Orbitron', sans-serif;
             font-size: 24px;
-            color: #fff;
             text-transform: uppercase;
             letter-spacing: 4px;
-            text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+            color: #333333;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
             animation: glow 2s ease-in-out infinite alternate;
         }
         #loading-overlay.show {
@@ -161,8 +166,8 @@
         <svg class="loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+                    <stop offset="0%" style="stop-color:#444444;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#444444;stop-opacity:1" />
                 </linearGradient>
             </defs>
             <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradient)" stroke-width="8" stroke-linecap="round" stroke-dasharray="180 180" transform="rotate(-90 50 50)">
