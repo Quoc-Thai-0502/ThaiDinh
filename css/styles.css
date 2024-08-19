@@ -449,3 +449,35 @@ body,
 }
 
 
+ #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0e2a3e; /* Background color to match your dark theme */
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Loader animation */
+  #loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

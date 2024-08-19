@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my Portfolio</title>
+    <title> Welcome to my Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
@@ -82,17 +82,17 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(30deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
-                linear-gradient(150deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
-                linear-gradient(30deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
-                linear-gradient(150deg, #a0a0a0 12%, transparent 12.5%, transparent 87%, #a0a0a0 87.5%, #a0a0a0),
+                linear-gradient(30deg, #5d5d5d 12%, transparent 12.5%, transparent 87%, #5d5d5d 87.5%, #5d5d5d),
+                linear-gradient(150deg, #5d5d5d 12%, transparent 12.5%, transparent 87%, #5d5d5d 87.5%, #5d5d5d),
+                linear-gradient(30deg, #5d5d5d 12%, transparent 12.5%, transparent 87%, #5d5d5d 87.5%, #5d5d5d),
+                linear-gradient(150deg, #5d5d5d 12%, transparent 12.5%, transparent 87%, #5d5d5d.5%, #5d5d5d),
                 linear-gradient(60deg, #8a8a8add 25%, transparent 25.5%, transparent 75%, #8a8a8add 75%, #8a8a8add),
                 linear-gradient(60deg, #8a8a8add 25%, transparent 25.5%, transparent 75%, #8a8a8add 75%, #8a8a8add);
             background-size: 80px 140px;
             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
             opacity: 0.15;
             z-index: 1;
-            animation: patternMove 20s linear infinite;
+            animation: patternMove 15s linear infinite;
         }
         @keyframes patternMove {
             0% { background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; }
@@ -131,7 +131,7 @@
             z-index: 9999;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
         }
         .loader {
             width: 150px;
@@ -145,13 +145,15 @@
             letter-spacing: 4px;
             color: #333333;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            animation: glow 2s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
         }
         #loading-overlay.show {
-            opacity: 1;
+            opacity: 0.9;
             visibility: visible;
+            transition: opacity 0.7s ease-in-out;
         }
-       
+     
+    
     </style>
 </head>
 <body>
@@ -185,7 +187,6 @@
         </svg>
         <div class="loader-text">Loading</div>
     </div>
-
     <script>
          
          function enterPortfolio() {
@@ -206,8 +207,8 @@
             
             setTimeout(() => {
                 window.location.href = '/ThaiDinh/html/introduce.html';
-            }, 900); // Đợi 0.9 giây trước khi chuyển trang
-        }, 900);
+            }, 1200); // Đợi 0.9 giây trước khi chuyển trang
+        }, 1200);
     }
 
             // Xử lý khi người dùng nhấn nút "Back"
@@ -228,6 +229,9 @@
             glow.style.left = `${x * 100}%`;
             glow.style.top = `${y * 100}%`;
         });
+
+
+        
     </script>
 </body>
 </html>
