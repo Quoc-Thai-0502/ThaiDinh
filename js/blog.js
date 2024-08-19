@@ -159,3 +159,5 @@ function renderFilteredPosts(filteredPosts) {
 
     document.getElementById('pagination').style.display = 'none';
 }
+
+
